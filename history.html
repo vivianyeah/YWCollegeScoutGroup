@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳門童軍第十二旅 - 歷史沿革</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', 'Noto Sans CJK TC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* 頁首 */
+        .header {
+            background: linear-gradient(135deg, #006633, #228B22);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #006633;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        /* 導航 */
+        .nav {
+            background: #004d26;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            padding: 0 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu a:hover {
+            background: #006633;
+            transform: translateY(-2px);
+        }
+
+        /* 主要內容 */
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #006633;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: #FFD700;
+            border-radius: 2px;
+        }
+
+        .content-block {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .content-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .content-block h3 {
+            color: #006633;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .content-block h4 {
+            color: #228B22;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .content-block p {
+            margin-bottom: 0.8rem;
+            text-align: justify;
+        }
+
+        .content-block ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .content-block ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* 頁尾 */
+        .footer {
+            background: #004d26;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+            }
+
+            .header-text h1 {
+                font-size: 2rem;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 頁首 -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-campground"></i>
+                </div>
+                <div class="header-text">
+                    <h1>澳門童軍第十二旅</h1>
+                    <p>12th Macau Scout Group</p>
+                </div>
+            </div>
+            <div class="subtitle">
+                粵華中學童軍旅部 | Yuet Wah College Scout Group
+            </div>
+        </div>
+    </header>
+
+    <!-- 導航 -->
+    <nav class="nav">
+        <div class="nav-content">
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> 首頁</a></li>
+                <li><a href="index.html#about"><i class="fas fa-info-circle"></i> 旅部簡介</a></li>
+                <li><a href="index.html#activities"><i class="fas fa-images"></i> 活動相片</a></li>
+                <li><a href="#"><i class="fas fa-history"></i> 歷史沿革</a></li>
+                <li><a href="index.html#organization"><i class="fas fa-sitemap"></i> 組織架構</a></li>
+                <li><a href="index.html#features"><i class="fas fa-star"></i> 活動特色</a></li>
+                <li><a href="index.html#contact"><i class="fas fa-envelope"></i> 聯絡我們</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main class="main-content">
+        <h2 class="section-title">
+            <i class="fas fa-history"></i>
+            歷史沿革
+        </h2>
+
+        <div class="content-block">
+            <h3>1. 童軍運動</h3>
+            <h4>- 童軍運動的起源</h4>
+            <p>童軍運動(Boy Scout Movement)始於1907年，由英國陸軍中將羅伯特·史提芬遜·貝登堡爵士(Sir Robert Baden-Powell)創立。1907年，在英國白浪島(Brownsea Island)舉辦了世界上第一次童軍露營活動，這次具有歷史意義的露營被視為童軍運動的起端。</p>
+            <p>1908年1月至4月間，貝登堡爵士將他的軍事偵察經驗與青少年教育理念結合，出版了《童子警探》(Scouting for Boys)。這部著作最初分為六冊出版，很快風靡英國各地，童軍運動也隨之在全國如火如荼地展開。</p>
+            <p>澳門在1911年，時任總督馬揸度(Álvaro de Melo Machado)成立了一支澳門童軍團體。葡萄牙週刊《葡萄牙插圖》(Ilustração Portuguesa)在1912年8月號刊登了共三頁篇幅，介絡童軍在澳門的活動情況，該童軍隊伍由當地的英語老師協助建立。（Vicente, A. C. S. (2004). A introdução do escutismo em Portugal. Lusitânia sacra, (16), 203-245.</p>
+        </div>
+
+        <div class="content-block">
+            <h4>- 童軍運動的全球擴展</h4>
+            <p>童軍運動以其獨特的教育理念活動方式，迅速從英國傳播到世界各地。於1912年童軍運動傳播至中國，嚴家麟先生在湖北武昌創立了中國第一個童軍團。1914年貝登堡爵士出版《幼童軍手冊》(Wolf Cub Handbook)，為8-11歲兒童設計了以諾貝爾文學獎得主吉普林(Rudyard Kipling)的名著《叢林奇談》為背景的活動方案。</p>
+        </div>
+
+        <div class="content-block">
+            <h4>- 童軍運動的現代發展</h4>
+            <p>時至今日，童軍運動已成為全球最大的青少年教育運動之一</p>
+            <ul>
+                <li>全球規模：超過170個國家和地區擁有童軍組織</li>
+                <li>會員人數：全球約有5,000萬童軍成員</li>
+            </ul>
+            <p>澳門童軍總會在1920年6月24日正式成立，並由男子中心學校老師阿爾杜．巴士度擔任童軍總司令。（施白蒂：《澳門編年史：20世紀 （1900—1949）》，第141頁。）</p>
+            <p>中國童子軍總會特派駐澳聯絡員陳海光曾撰文指出澳門童子軍的活動應自1918年開始，先在澳門英文學校展開活動，其後在澳門組織成立澳門中華童軍協會。並且文中亦提及當時中國童子軍在澳門的活動受澳葡政府限制，但後來葡國童軍司令員巴士度逝世後，情況有所改善。陳海光：《僑澳童子軍概況：輔導澳門童子軍事業經過》，《廣義童子軍團年刊》(上海)，1948年第3期，第 124頁。</p>
+            <p>自1920年，世界童軍運動組織(WOSM)成立，總部設於瑞士日內瓦。每四年舉辦一次的世界童軍大露營成為全球童軍交流的重要盛事。2007年，全球童軍共同慶祝了童軍運動創立100周年，彰顯這一運動的持久影響力。</p>
+            <p>童軍運動經歷超過百年的發展，當中"日行一善"的精神，持續影響著一代又一代的青少年，幫助他們成為負責任的世界公民。</p>
+        </div>
+
+        <div class="content-block">
+            <h3>2. 澳門粵華童軍運動簡史</h3>
+            <h4>1925年</h4>
+            <p>粵華中學由廖奉基及譯綺雯兩位女士在廣州創立，因時局動亂，在1928年南遷至澳門繼績辦學。</p>
+            <h4>1933年6月10日</h4>
+            <p>中國童子軍粵華中學隊與葡國童子軍努那歐維士隊在澳門白鴿巢公園北端賈梅士洞前共同舉行宣誓儀式並勒石紀念，當中亦有150名粵華中學的童子軍。根據本澳知名學者黃就順先生所著《抗戰勝利五十周年紀念回憶錄-風潮時期的澳門》一文。粵華中學是全澳最早成立童子軍的學校。</p>
+            <p>(在1933年的畢業紀念照中，畢業生均穿著整齊的童子軍制服拍攝畢業照片，可見童子軍受重視的程度)</p>
+            <h4>1947年6月5-9日</h4>
+            <p>在黃花崗舉行的“中國童子軍廣東省第一次全省總檢閱大會”，澳門分會也有派出代表，當中亦包括6名粵華中學學生。 粵華中學除派代表多人加入全澳童子軍代表隊以外，另自組織童子軍觀摩團，一行41人，由校長廖榮福親自率領。</p>
+            <h4>1983年12月12日</h4>
+            <p>在澳門教育界人士和社會賢達的共同倡議下，大家認為實在有必要成立澳門童軍總會的一個民間組織。籌備期間，得到了澳門政府和社會賢達的大力支持，更得到了在世界童軍組織亞太區童軍辦事處和香港童軍總會的大力協助下，經過長達一年多的部署和訓練，於1983年12月12日正式在澳門立案註冊成立。來自澳門政府、亞太地區和香港童軍總會的代表以及社會各界賢達，官紳名流，均應邀出席了成立典禮，共同見証了澳門童軍總會的誕生，為當時澳門的一大盛事。</p>
+            <h4>1987年1月24日</h4>
+            <p>在時任粵華中學校長孔智剛神父的倡議下，粵華中學澳門童軍第十二旅正式在童軍總會註冊成立；創旅旅長為廖忻怡先生 ，開旅當日亦成立童軍團，首任團長關自立先生。</p>
+            <h4>1987年2月21日</h4>
+            <p>澳門童軍第十二旅第一期童軍團成員宣誓。</p>
+            <h4>1987年12月19日</h4>
+            <p>澳門童軍第十二旅幼童軍團成立 . 首任團長為為許健鴻老師。</p>
+            <h4>1991年2月2日（貝登堡勲爵誕辰）</h4>
+            <p>粵華中學校長華近禮神父主持感恩彌撒，並祝聖本旅旅旗。</p>
+            <h4>1999年12月20日</h4>
+            <p>澳門回歸祖國，根據慈幼會葡國會省與中華會省達成的協議，葡光學校的主辦權移交中華會省。為了配合本澳慈幼會學校發展，會省決定將該校與粵華中學合併，並易名為鮑思高粵華小學，粵華中學原有的小學四至六年級中英文部及陳瑞祺永援分校的小學一至三年級學生於2000年9月遷往該校。澳門童軍第十二旅幼童軍團亦同時在粵華中學停辦。</p>
+            <h4>2001年2月24日</h4>
+            <p>在鮑思高粵華小學孔智剛校長的倡議下，澳門童軍第二十八旅成立並隸屬該校，並在澳門童軍總會註冊下設幼童軍團，以承傳及延續粵華中學原有的幼童軍支部，首任旅長為張鳳萍老師 。</p>
+            <h4>2013年8月24日</h4>
+            <p>澳門童軍第十二旅深資童軍團於澳門白鴿巢公園賈梅士洞旁邊的童軍紀念碑前成立；以緬懷1933年 粵華童子軍與葡國童子軍在此聯合宣誓，首任團長為鍾震宇先生。</p>
+            <h4>2015年7月5日</h4>
+            <p>來自世界童軍組織 (WOSM) 的三位代表到訪粵華中學，目的是為了解澳門童軍運動的情況。 在總會的安排下，由澳門童軍第3旅 、第4旅、 第28旅、第34旅及本旅進行聯旅集會，以展示三個支部的日常訓練與活動。期間，本旅領袖向組織代表總會總監和嘉賓介紹了校內設施、澳門的教育制度、學校對童軍運動的支持等、 並透過學校的相片及文物加深了三位對澳門童軍運動的了解和認識。</p>
+            <h4>2024年5月18日</h4>
+            <p>本旅協助粵華中學首次舉辦〝鮑思同童日“活動，參加單位由慈幼會及母佑會轄下5所學校童軍旅團組成：包括：陳瑞祺永援中學第８旅、粵華中學第12旅、慈幼中學第15旅、聖瑪沙利羅學校第19旅及鮑思高粵華小學第28旅。當日約有400人參與，透過親子制作玫瑰念珠及參與一台由周伯輝神父（粵華中學校長）舉行之彌撒感恩聖祭，並祝聖上述５個旅團旅旗。</p>
+            <h4>2024年10月13日</h4>
+            <p>正式使用《澳門童軍總會隊列網要》，即由葡式步操轉用中式隊列，作為常規步操訓練。並於同日獲頒發〝傑出旅部隊列“（比賽於2024年10月6日舉行）</p>
+            <h4>2024年12月14日</h4>
+            <p>澳門童軍總會成立41周年會慶，本旅（粵華中學）獲頒授特別任務紀念獎章，以表揚粵華中學第十二旅為中式隊列所作出的貢獻。</p>
+            <h4>2025年1月12日</h4>
+            <p>澳門童軍總會隊列啟用特別任務紀念獎勵頒禮典禮」。此次典禮在濠江中學隆重舉行，旨在表彰在隊列啟用過程中作出卓越貢獻的領袖及童軍們。當日本旅成員獲頒特別任務紀念章共（20人）、特別任務紀念獎狀（共10人）。</p>
+        </div>
+
+        <div class="content-block">
+            <h3>3. 童軍教育</h3>
+            <p>(一)童軍教育是以活動為主的生活教育,講解只佔極少部份,從活動中學習可以有效地培育童軍各樣的能力同情操,養成良好的行為和習慣。</p>
+            <p>(二)童軍教育的方法具有特殊意義,不論露營、集會、遊戲、服務、訓練等各種活動,均是以達成童軍教育目的為原則的過程。</p>
+            <p>(三)童軍教育的特點是在教導過程中,採用一種把各種技能知識綜合組織的方法,使青年少能達致認知、情意、技能三大领域中互相匯通的教育效果。</p>
+            <p>(四)童軍教育是以活動為中心,引起學習動機,刺激學習行為,好能使青年少從實踐中學習,從而獲得本身的經驗。領袖只是負責引導童軍進行學習,而非代替他們思考。</p>
+            <p>(五)結實踐留詞、規律、銘言進行道德教育、配合不同支部的訓練方式和目標,培養青年少成為良好公民。</p>
+        </div>
+
+        <div class="content-block">
+            <h3>4. 精神理念</h3>
+            <p>本旅一向以「服務社群」為核心。我們不僅教授技能，更致力於培養具備責任感、服務精神與榮譽心的新一代領袖。首先，我們教導旅員勇於承擔，從日常小事的自律到團隊合作的協作，讓責任成為人生路上的基石。 我們更鼓勵本旅童軍以行動服務社會，從社區服務到環保實踐，用雙手傳遞溫暖，用行動體現「日行一善」的精神。重要的是我們尤為重視品格的塑造，以責任、服務、榮譽為我們的旅訓。</p>
+        </div>
+
+        <div class="content-block">
+            <h3>5. 旅徽、旅旗、旅巾</h3>
+            <p>澳門童軍第十二旅旅徽由三個部份構成；分別是粵華中學校徽、童軍徽及基督大十字徽號。它們分別代表著本旅的旅訓:即責任(校徽)、服務(童軍徽)及榮譽( 基督大十字徽)。</p>
+            <p>本旅旅團標誌章為圓形,底色為深藍色,上綴白色的Agrupamento N°12，中文『第十二旅』,由1988年開始使用至今。本旅成員可配戴於制服右袖上，為全體軍職成員的特有精神標誌。</p>
+            <p>補充：現時所使用之葡文旅團名稱為：12° Grupo de Escoteiros de Macau</p>
+            <p>旅巾顏色以天藍色配淺灰色邊，天藍色代表廣濶的胸襟、淺灰色代表謙遜簡僕的生活態度。</p>
+            <p>澳門童軍第二十八旅旅徽由三個部份構成，分別是鮑思高粵華小學校徽、童軍徽及基督大十字徽號。它們分別代表著該旅的旅訓:即責任(校徽)、服務(童軍徽)及榮譽(基督大十字徽)。</p>
+            <p>該旅的旅團標誌章為圓形，底色為深藍色，上綴白色的28° Grupo dos Escoteiros de Macau ，中文『第廿八旅』，由2013年開始使用至今。該旅成員可配戴於制服右袖上，為全體軍職成員的特有精神標誌。</p>
+            <p>旅巾顏色為黃色及白色，而兩色分別為聖伯多祿的兩把鑰匙，分別代表天國(金鑰匙)和世界(銀鑰匙)。</p>
+        </div>
+
+        <div class="content-block">
+            <h3>6. 活動一覽</h3>
+            <h4>(照片+活動名稱+時間)</h4>
+            <ul>
+                <li>2025年5月17日鮑聖同樂日</li>
+                <li>2025年5月13日粵華童軍護航聖母巡遊</li>
+                <li>2025年5月3-4日第十二旅童軍2025露營</li>
+                <li>2025年1月12日澳門童軍總會隊列啟用特別任務紀念獎勵頒禮典禮</li>
+                <li>2024年5月18日鮑聖同樂日</li>
+                <li>2023年7月16日永續發展計劃－多功能環保繩</li>
+                <li>2023年6月3日8 x 12 x 28 x 29「和平使者計劃」活動-「DIY節水器具」</li>
+                <li>2022年5月28日和平使者計劃2022－「友」愛「童」行</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.scout.org.mo" target="_blank">澳門童軍總會</a>
+                <a href="https://www.yuetwah.edu.mo" target="_blank">粵華中學</a>
+                <a href="index.html#about">關於我們</a>
+                <a href="index.html#activities">活動相片</a>
+                <a href="#">歷史沿革</a>
+                <a href="index.html#organization">組織架構</a>
+            </div>
+            <p>&copy; 2025 澳門童軍第十二旅 - 粵華中學童軍旅部. 版權所有.</p>
+            <p>12th Macau Scout Group - Yuet Wah College Scout Group</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+

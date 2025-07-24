@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳門童軍第十二旅 - 組織架構</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', 'Noto Sans CJK TC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* 頁首 */
+        .header {
+            background: linear-gradient(135deg, #006633, #228B22);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #006633;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        /* 導航 */
+        .nav {
+            background: #004d26;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            padding: 0 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu a:hover {
+            background: #006633;
+            transform: translateY(-2px);
+        }
+
+        /* 主要內容 */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #006633;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-top: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 2px;
+        }
+
+        .org-structure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .level-box {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+        }
+
+        .level-box h3 {
+            font-size: 1.8rem;
+            color: #006633;
+            margin-bottom: 1.5rem;
+        }
+
+        .level-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .level-box ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .level-box ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .level-box.leader-level {
+            border-top: 5px solid #006633;
+        }
+
+        .level-box.senior-scout-level {
+            border-top: 5px solid #228B22;
+        }
+
+        .level-box.scout-level {
+            border-top: 5px solid #FFD700;
+        }
+
+        .level-box.cub-scout-level {
+            border-top: 5px solid #FF6347;
+        }
+
+        .patrol-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .patrol-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .patrol-card:hover {
+            transform: translateY(-5px);
+            border-color: #006633;
+            box-shadow: 0 8px 20px rgba(0,102,51,0.2);
+        }
+
+        .patrol-card h4 {
+            color: #006633;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .patrol-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .patrol-card .motto {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* 頁尾 */
+        .footer {
+            background: #004d26;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+            }
+
+            .header-text h1 {
+                font-size: 2rem;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+            }
+
+            .level-box {
+                padding: 1.5rem;
+            }
+
+            .patrol-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* 動畫效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* 滾動效果 */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- 頁首 -->
+    <header class="header">
+        <div class="header-content fade-in-up">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-campground"></i>
+                </div>
+                <div class="header-text">
+                    <h1>澳門童軍第十二旅</h1>
+                    <p>12th Macau Scout Group</p>
+                </div>
+            </div>
+            <div class="subtitle">
+                粵華中學童軍旅部 | Yuet Wah College Scout Group
+            </div>
+        </div>
+    </header>
+
+    <!-- 導航 -->
+    <nav class="nav">
+        <div class="nav-content">
+            <ul class="nav-menu">
+                <li><a href="index.html#home"><i class="fas fa-home"></i> 首頁</a></li>
+                <li><a href="index.html#about"><i class="fas fa-info-circle"></i> 旅部簡介</a></li>
+                <li><a href="index.html#activities"><i class="fas fa-images"></i> 活動相片</a></li>
+                <li><a href="history.html"><i class="fas fa-history"></i> 歷史沿革</a></li>
+                <li><a href="#organization"><i class="fas fa-sitemap"></i> 組織架構</a></li>
+                <li><a href="index.html#features"><i class="fas fa-star"></i> 活動特色</a></li>
+                <li><a href="index.html#contact"><i class="fas fa-envelope"></i> 聯絡我們</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main class="main-content">
+        <section id="organization-full" class="scroll-reveal">
+            <h2 class="section-title">
+                <i class="fas fa-sitemap"></i>
+                組織架構
+            </h2>
+            <div class="org-structure">
+                <!-- 旅級領袖 -->
+                <div class="level-box leader-level">
+                    <h3><i class="fas fa-crown"></i> 旅級領袖</h3>
+                    <p><strong>旅長：</strong>許健鴻先生</p>
+                    <p><strong>副旅長：</strong>廖忻怡先生（LT）、鍾震宇先生（LT）、張家耀先生</p>
+                </div>
+
+                <!-- 深資童軍團 -->
+                <div class="level-box senior-scout-level">
+                    <h3><i class="fas fa-hiking"></i> 深資童軍團</h3>
+                    <p><strong>團長：</strong>鍾震宇先生（LT）（兼任）</p>
+                    <p><strong>副團長：</strong>盧子健先生</p>
+                    <p><strong>團教練員：</strong>鄭倩雯小姐（ALT）</p>
+                    <p>年齡：16-21歲，以執行委員會形式運作，培養領導能力和社會責任感。</p>
+                </div>
+
+                <!-- 童軍團 -->
+                <div class="level-box scout-level">
+                    <h3><i class="fas fa-child"></i> 童軍團</h3>
+                    <p><strong>團長：</strong>高誠華先生、易倩宜小姐</p>
+                    <p><strong>副團長：</strong>劉浩正先生、沈偉豪先生、周栩楓小姐</p>
+                    <p><strong>團教練員：</strong>袁誌先生、黃曦朗先生、林梓謙先生、祝舜元先生</p>
+                    <p>年齡：12-16歲，以小隊制度為基礎，培養團隊合作和生活技能。</p>
+                </div>
+
+                <!-- 幼童軍團 -->
+                <div class="level-box cub-scout-level">
+                    <h3><i class="fas fa-seedling"></i> 幼童軍團</h3>
+                    <p><strong>團長：</strong>許健鴻老師</p>
+                    <p>年齡：8-11歲，透過遊戲和故事學習童軍知識，培養良好品格。</p>
+                </div>
+            </div>
+
+            <h3 class="section-title" style="margin-top: 3rem;">
+                <i class="fas fa-paw"></i>
+                童軍小隊
+            </h3>
+            <div class="patrol-grid">
+                <div class="patrol-card">
+                    <h4>貓頭鷹小隊</h4>
+                    <p>隊色：淺藍色</p>
+                    <p class="motto">"無聲掠影，使命必達"</p>
+                    <p><strong>隊歌：</strong> 金黄眼睛亮晶晶，夜里飛行最機靈，无聲滑过月光下，守護森林小衛兵，我們是猫頭鷹小隊！團結勇敢不後退！智慧雙眼察四方，齊心協力向前飞！</p>
+                    <p><strong>隊員：</strong> 盧誠業(小隊長)、趙熙樂(副隊長)、鄧竟成、勞灝雋、關亭希、吳仲曄、詹子浩</p>
+                </div>
+                <div class="patrol-card">
+                    <h4>海狸小隊</h4>
+                    <p>隊色：黃藍色</p>
+                    <p class="motto">"海狸!海狸!海狸!go!go!go!"</p>
+                    <p><strong>隊歌：</strong> 我哋係最勁嘅海狸隊，我哋天天一起歌唱，我哋好鬼勁，我哋好勇敢，我哋係一個好童軍!</p>
+                    <p><strong>隊員：</strong> 黃俊昊(小隊長)、吳叡臻(副隊長)、黃俊熙、陳柏濠、張天賜</p>
+                </div>
+                <div class="patrol-card">
+                    <h4>老虎小隊</h4>
+                    <p>隊色：紫色底綠色邊</p>
+                    <p class="motto">"老虎小隊!吼!"</p>
+                    <p><strong>隊歌：</strong> 一老虎，二老虎，三都老虎；四老虎，五老虎，六都老虎；七老虎，八老虎，九都老虎；十隻老虎啦!!</p>
+                    <p><strong>隊員：</strong> 黃孝傑(小隊長)、陳樂軒(副隊長)、梁永希、施靖崙、梁銘彥</p>
+                </div>
+                <div class="patrol-card">
+                    <h4>獵犬小隊</h4>
+                    <p>隊色：橙色</p>
+                    <p class="motto">"獵犬強 獵犬勁 獵犬無得頂"</p>
+                    <p><strong>隊歌：</strong> 當你知道你好快樂獵犬 當你知道你好快樂獵犬 當你知道你好快樂你係獵犬隊既隊員 當你知道你好快樂獵犬</p>
+                    <p><strong>隊員：</strong> 郭綽彥(小隊長)、林俊溢(副隊長)、陳昀彤、梁康堯、馮澤希、黃子軒</p>
+                </div>
+                <div class="patrol-card">
+                    <h4>松鼠小隊</h4>
+                    <p>隊色：白紅色</p>
+                    <p class="motto">"像松鼠般機靈，像松鼠般團結"</p>
+                    <p><strong>隊歌：</strong> 第五隊就係松鼠小隊，佢站在粵華上，繼承着貝登堡的精神，照耀着東方的粵華</p>
+                    <p><strong>隊員：</strong> 游柏熙(小隊長)、梁浩霖(副隊長)、伍泓謙、黃子駿、趙熙泓</p>
+                </div>
+                <div class="patrol-card">
+                    <h4>小鹿小隊</h4>
+                    <p>隊色：紫黑色</p>
+                    <p class="motto">"小鹿世，小鹿一，小鹿係世一！"</p>
+                    <p><strong>隊歌：</strong> 三加三就等於阿鹿，二加二就等於阿四，但係阿鹿唔係你嘅阿四，因為阿鹿係你嘅小Bady！</p>
+                    <p><strong>隊員：</strong> 袁穎(小隊長)、黃嘉俊(副隊長)、黃家希、劉承濬、李逸朗、許霈怡、勞頌希</p>
+                </div>
+                <div class="patrol-card">
+                    <h4>狼小隊</h4>
+                    <p>隊色：黃黑色</p>
+                    <p class="motto">"狼來了，狼來了"</p>
+                    <p><strong>隊歌：</strong> 我哋係隻小灰狼,唔食兔子唔食羊,可愛善良又大方,團結有禮像隻狼</p>
+                    <p><strong>隊員：</strong> 施柏謙(小隊長)、張灝然(副隊長)、區逸朗、施晉杰、周子軒</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.scout.org.mo" target="_blank">澳門童軍總會</a>
+                <a href="https://www.yuetwah.edu.mo" target="_blank">粵華中學</a>
+                <a href="index.html#about">關於我們</a>
+                <a href="index.html#activities">活動相片</a>
+            </div>
+            <p>&copy; 2025 澳門童軍第十二旅 - 粵華中學童軍旅部. 版權所有.</p>
+            <p>12th Macau Scout Group - Yuet Wah College Scout Group</p>
+        </div>
+    </footer>
+
+    <script>
+        // 滾動顯示動畫
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.scroll-reveal');
+            
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('revealed');
+                }
+            });
+        }
+
+        // 頁面載入完成後執行
+        document.addEventListener('DOMContentLoaded', function() {
+            revealOnScroll();
+            
+            // 監聽滾動事件
+            window.addEventListener('scroll', revealOnScroll);
+        });
+    </script>
+</body>
+</html>
+
+
